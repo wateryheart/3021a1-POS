@@ -1,0 +1,2 @@
+start by java -jar POS.jar to run interactive mode
+or java -jar POS.jar input.txt to run batch mode

@@ -1,0 +1,137 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Log</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">POS</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Log (POS)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Log</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (18/ 20)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Log$$EnhancerByMockitoWithCGLIB$$b0a2edce</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (18/ 20)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package POS;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.io.*;
+<i>4</i>&nbsp;import java.util.ArrayList;
+<i>5</i>&nbsp;import java.util.List;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * Created by wateryheart on 25/Feb/2014.
+<i>9</i>&nbsp; * Record all event loggings
+<i>10</i>&nbsp; * @author MAR Chun Sum Connie (20057384)
+<i>11</i>&nbsp; */
+<b class="fc"><i>12</i>&nbsp;public class Log {</b>
+<i>13</i>&nbsp;    /** temporary store the log information before the sale finish*/
+<b class="fc"><i>14</i>&nbsp;    public static List&lt;String&gt; tempLog = new ArrayList&lt;String&gt;();</b>
+<i>15</i>&nbsp;    /**constructor*/
+<i>16</i>&nbsp;    public void log(String message, boolean show){
+<b class="fc"><i>17</i>&nbsp;        tempLog.add(message);</b>
+<b class="fc"><i>18</i>&nbsp;        if(show)</b>
+<b class="fc"><i>19</i>&nbsp;            System.out.println(message);</b>
+<b class="fc"><i>20</i>&nbsp;    }</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    /** put logging into the logAndSales.txt*/
+<i>23</i>&nbsp;    public void finalLog() {
+<i>24</i>&nbsp;        try{
+<b class="fc"><i>25</i>&nbsp;            File finalLog = new File(System.getProperty(&quot;user.dir&quot;) +&quot;/logAndSales.txt&quot;);</b>
+<b class="fc"><i>26</i>&nbsp;            if(!finalLog.exists())</b>
+<b class="fc"><i>27</i>&nbsp;                finalLog.createNewFile();</b>
+<b class="fc"><i>28</i>&nbsp;            PrintWriter output = new PrintWriter(new BufferedWriter(new FileWriter(finalLog, true)));</b>
+<b class="fc"><i>29</i>&nbsp;            for(String s :tempLog)</b>
+<i>30</i>&nbsp;            {
+<b class="fc"><i>31</i>&nbsp;                output.println(s);</b>
+<i>32</i>&nbsp;            }
+<b class="fc"><i>33</i>&nbsp;            output.close();</b>
+<b class="fc"><i>34</i>&nbsp;            clearTempLog();</b>
+<b class="nc"><i>35</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>36</i>&nbsp;            System.out.println(e.getMessage());</b>
+<b class="fc"><i>37</i>&nbsp;        }</b>
+<b class="fc"><i>38</i>&nbsp;    }</b>
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    /** clear the temporary logs*/
+<i>41</i>&nbsp;    public void clearTempLog(){
+<b class="fc"><i>42</i>&nbsp;        tempLog.clear();</b>
+<b class="fc"><i>43</i>&nbsp;    }</b>
+<i>44</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2014-04-11 23:43</div>
+</div>
+</body>
+</html>

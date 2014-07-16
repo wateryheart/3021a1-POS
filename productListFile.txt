@@ -1,0 +1,5 @@
+ID001 pencil 1.0 1000 
+ID002 basketball 120.0 1000 
+ID003 notebook 2.2 1000 
+ID004 tissue 10.0 1000 
+ID005 doll 33.0 1000
